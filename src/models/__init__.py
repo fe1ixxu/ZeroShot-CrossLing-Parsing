@@ -1,0 +1,2 @@
+from .bert_biaffine_dependency_parser import BertBiaffineDependencyParser
+from .biaffine_dependency_parser import BiaffineDependencyParser
