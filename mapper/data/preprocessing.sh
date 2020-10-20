@@ -2,7 +2,7 @@
 
 src=$1
 tgt=$en
-path=$2 #YOUR/PATH/FOR/PARALLEL/CORPUS, point our your path of folder for downloaded corpora 
+path=$2 #YOUR/PATH/FOR/PARALLEL/CORPUS/, point our your path of folder for downloaded corpora 
 fastalign=$3
 
 mkdir ${path}vectors/
