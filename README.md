@@ -34,7 +34,7 @@ Before using English pre-trained model to parse treebanks in other languages, yo
 ```
 
 ## If you want to train a English parser yourself
-You may need to change the path location for the train and dev dataset.
+You may need to change the path location for the train and dev dataset in the config file `allen_configs/enbert_IN.jsonnet`.
 ```
 allennlp train allen_configs/enbert_IN.jsonnet -s PATH/TO/STORE/MODEL  --include-package src
 ```
