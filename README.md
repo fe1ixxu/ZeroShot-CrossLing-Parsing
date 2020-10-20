@@ -1,5 +1,7 @@
 # Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation
 
+<div align=center><img src="https://github.com/fe1ixxu/ZeroShot-CrossLing-Parsing/blob/master/model.png"/></div>
+
 ## Prerequisites
 First install the virtual environmemt including required packages.
 ```
