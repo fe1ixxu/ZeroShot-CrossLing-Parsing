@@ -1,5 +1,5 @@
 LANG=$1
-TYPE=$2 # ["mean", "multi"]: mean -> word-level; multi -> sense-level 
+TYPE=multi # ["mean", "multi"]: mean -> word-level; multi -> sense-level 
 
 PATH_TREE=/export/b15/haoranxu/clce/data/ud-treebanks-v2.6/ #PATH/FOR/TREEBANK2.6/  # e.g., data/ud-treebanks-v2.6/
 MODEL_DIR="/export/b15/haoranxu/clce/outputs/iter-norm-enbert" #/DIR/FOR/PRE-TRAINED/MODEL 
