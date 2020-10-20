@@ -34,7 +34,7 @@ OUTPUT_FILE="${MODEL_DIR}/Sys-${LANG}-out"
 OVERRIDES_PATH="allen_configs/override_embedder.jsonnet"
 OVERRIDES=$(python ./src/load_overrides.py --overrides $OVERRIDES_PATH --lang $LANG --type $TYPE --mapping_path $PATH_MAP) 
 
-CUDA_VISIBLE_DEVICES=`free-gpu` python evaluate.py $MODEL_FILE $INPUT_FILE \
+CUDA_VISIBLE_DEVICES=0 python evaluate.py $MODEL_FILE $INPUT_FILE \
 --output-file $OUTPUT_FILE \
 --weights-file $WEIGHTS_FILE \
 --cuda-device 0 \
