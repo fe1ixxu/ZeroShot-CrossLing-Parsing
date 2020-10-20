@@ -104,8 +104,8 @@ local max_length = 1024;
         },
         "use_mst_decoding_for_validation": true
     },
-    "train_data_path": "/export/b15/haoranxu/clce/data/ud-treebanks-v2.6/UD_English-EWT/en_ewt-ud-train.conllu",  
-    "validation_data_path": "/export/b15/haoranxu/clce/data/ud-treebanks-v2.6/UD_English-EWT/en_ewt-ud-dev.conllu",
+    "train_data_path": "ud-treebanks-v2.6/UD_English-EWT/en_ewt-ud-train.conllu",  
+    "validation_data_path": "ud-treebanks-v2.6/UD_English-EWT/en_ewt-ud-dev.conllu",
     "trainer": {
         "type": "iter_norm",
         "cuda_device": 0,
