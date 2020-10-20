@@ -1,10 +1,9 @@
 LANG=$1
 TYPE=multi # ["mean", "multi"]: mean -> word-level; multi -> sense-level 
 
-PATH_TREE=/export/b15/haoranxu/clce/data/ud-treebanks-v2.6/ #PATH/FOR/TREEBANK2.6/  # e.g., data/ud-treebanks-v2.6/
-MODEL_DIR="/export/b15/haoranxu/clce/outputs/iter-norm-enbert" #/DIR/FOR/PRE-TRAINED/MODEL 
-PATH_MAP=/export/b15/haoranxu/clce/mappings/no_noise
-MBERT=no
+PATH_TREE=PATH/FOR/TREEBANK2.6/  # e.g., data/ud-treebanks-v2.6/
+MODEL_DIR=DIR/FOR/PRE-TRAINED/MODEL 
+PATH_MAP=PATH/FOR/MAPING
 
 if [ ${LANG} == en ]
 then
@@ -29,35 +28,15 @@ then
     INPUT_FILE="${PATH_TREE}UD_Spanish-GSD/es_gsd-ud-test.conllu"
 fi
 
-# if [ $MBERT == yes ]
-# then
-#     MODEL_DIR="/export/b15/haoranxu/clce/outputs/mbert-cased-1000"
-# else
-#     MODEL_DIR="/export/b15/haoranxu/clce/outputs/iter-norm-enbert"
-# fi
-
-
 MODEL_FILE="${MODEL_DIR}/model.tar.gz"
 WEIGHTS_FILE="${MODEL_DIR}/best.th"
 OUTPUT_FILE="${MODEL_DIR}/Sys-${LANG}-out"
 OVERRIDES_PATH="allen_configs/override_embedder.jsonnet"
+OVERRIDES=$(python ./src/load_overrides.py --overrides $OVERRIDES_PATH --lang $LANG --type $TYPE --mapping_path $PATH_MAP) 
 
-
-if [ $MBERT == yes ]
-then
-    CUDA_VISIBLE_DEVICES=`free-gpu` python evaluate.py $MODEL_FILE $INPUT_FILE \
-    --output-file $OUTPUT_FILE \
-    --weights-file $WEIGHTS_FILE \
-    --cuda-device 0 \
-    --include-package src 
-else
-    OVERRIDES=$(python ./src/load_overrides.py --overrides $OVERRIDES_PATH --lang $LANG --type $TYPE --mapping_path $PATH_MAP) 
-
-    CUDA_VISIBLE_DEVICES=`free-gpu` python evaluate.py $MODEL_FILE $INPUT_FILE \
-    --output-file $OUTPUT_FILE \
-    --weights-file $WEIGHTS_FILE \
-    --cuda-device 0 \
-    --include-package src \
-    --overrides $OVERRIDES
-
-fi
+CUDA_VISIBLE_DEVICES=`free-gpu` python evaluate.py $MODEL_FILE $INPUT_FILE \
+--output-file $OUTPUT_FILE \
+--weights-file $WEIGHTS_FILE \
+--cuda-device 0 \
+--include-package src \
+--overrides $OVERRIDES
