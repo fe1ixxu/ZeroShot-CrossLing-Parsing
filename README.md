@@ -40,3 +40,4 @@ allennlp train allen_configs/enbert_IN.jsonnet -s PATH/TO/STORE/MODEL  --include
 ```
 
 ## If you want to derive your own cross-lingual mappings
+Please follow the instrcution [here](https://github.com/fe1ixxu/ZeroShot-CrossLing-Parsing/tree/master/mapper).
