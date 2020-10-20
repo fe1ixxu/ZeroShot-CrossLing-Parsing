@@ -32,3 +32,11 @@ Before using English pre-trained model to parse treebanks in other languages, yo
 ```
 ./evaluate.sh lang   # e.g., ./evaluate.sh fi
 ```
+
+## If you want to train a English parser yourself
+You may need to change the path location for the train and dev dataset.
+```
+allennlp train allen_configs/enbert_IN.jsonnet -s PATH/TO/STORE/MODEL  --include-package src
+```
+
+## If you want to derive your own cross-lingual mappings
