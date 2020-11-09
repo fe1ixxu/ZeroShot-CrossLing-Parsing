@@ -194,27 +194,15 @@ def read_examples(input_file):
 
 
 def get_tokenizer_model(language):
-    assert language in ["en", "de", "fi", "ar", "nl", "el", "es", "pl", "ro", "sv", "pt", "bg"]
+    assert language in ["en", "fi", "el", "es", "pl", "ro", "pt"]
     if language == "en":
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         config = BertConfig.from_pretrained("bert-base-uncased", output_hidden_states=True)
         model = BertModel.from_pretrained('bert-base-uncased', config=config)
-    elif language == "de":
-        tokenizer = AutoTokenizer.from_pretrained("dbmdz/bert-base-german-uncased")
-        config = AutoConfig.from_pretrained("dbmdz/bert-base-german-uncased", output_hidden_states=True)
-        model = AutoModel.from_pretrained("dbmdz/bert-base-german-uncased", config=config)
     elif language == "fi":
         tokenizer = AutoTokenizer.from_pretrained("TurkuNLP/bert-base-finnish-uncased-v1")
         config = AutoConfig.from_pretrained("TurkuNLP/bert-base-finnish-uncased-v1", output_hidden_states=True)
         model = AutoModel.from_pretrained("TurkuNLP/bert-base-finnish-uncased-v1", config=config)
-    elif language == "ar":
-        tokenizer = AutoTokenizer.from_pretrained("asafaya/bert-base-arabic")
-        config = AutoConfig.from_pretrained("asafaya/bert-base-arabic", output_hidden_states=True)
-        model = AutoModel.from_pretrained("asafaya/bert-base-arabic", config=config)
-    elif language == "nl":
-        tokenizer = BertTokenizer.from_pretrained("wietsedv/bert-base-dutch-cased")
-        config = BertConfig.from_pretrained("wietsedv/bert-base-dutch-cased", output_hidden_states=True)
-        model = BertModel.from_pretrained('wietsedv/bert-base-dutch-cased', config=config)
     elif language == "el":
         tokenizer = AutoTokenizer.from_pretrained("nlpaueb/bert-base-greek-uncased-v1")
         config = AutoConfig.from_pretrained("nlpaueb/bert-base-greek-uncased-v1", output_hidden_states=True)
@@ -231,20 +219,10 @@ def get_tokenizer_model(language):
         tokenizer = AutoTokenizer.from_pretrained("dumitrescustefan/bert-base-romanian-uncased-v1", do_lower_case=True)
         config = AutoConfig.from_pretrained("dumitrescustefan/bert-base-romanian-uncased-v1", output_hidden_states=True)
         model = AutoModel.from_pretrained("dumitrescustefan/bert-base-romanian-uncased-v1", config=config)
-    elif language == "sv":
-        tokenizer = AutoTokenizer.from_pretrained("af-ai-center/bert-base-swedish-uncased")
-        config = AutoConfig.from_pretrained("af-ai-center/bert-base-swedish-uncased", output_hidden_states=True)
-        model = AutoModel.from_pretrained("af-ai-center/bert-base-swedish-uncased", config=config)
     elif language == "pt":
         tokenizer = AutoTokenizer.from_pretrained("neuralmind/bert-base-portuguese-cased", do_lower_case=True)
         config = AutoConfig.from_pretrained("neuralmind/bert-base-portuguese-cased", output_hidden_states=True)
         model = AutoModel.from_pretrained("neuralmind/bert-base-portuguese-cased", config=config)
-    elif language == "bg":
-        tokenizer = AutoTokenizer.from_pretrained("anon-submission-mk/bert-base-macedonian-bulgarian-cased", do_lower_case=True)
-        config = AutoConfig.from_pretrained("anon-submission-mk/bert-base-macedonian-bulgarian-cased", output_hidden_states=True)
-        model = AutoModel.from_pretrained("anon-submission-mk/bert-base-macedonian-bulgarian-cased", config=config)
-
-        
 
     return tokenizer, model
 
