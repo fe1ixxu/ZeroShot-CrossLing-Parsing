@@ -1,5 +1,15 @@
 # Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation
 
+If you find anything useful in this work, please cite our [paper](https://arxiv.org/abs/2103.02212):
+```
+@article{xu2021zero,
+  title={Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation},
+  author={Xu, Haoran and Koehn, Philipp},
+  journal={arXiv preprint arXiv:2103.02212},
+  year={2021}
+}
+```
+
 <div align=center><img src="https://github.com/fe1ixxu/ZeroShot-CrossLing-Parsing/blob/master/model.png"/></div>
 
 ## Prerequisites
