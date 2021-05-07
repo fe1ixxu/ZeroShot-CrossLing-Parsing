@@ -1,12 +1,19 @@
 # Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation
 
-If you find anything useful in this work, please cite our [paper](https://arxiv.org/abs/2103.02212):
+If you find anything useful in this work, please cite our [paper](https://www.aclweb.org/anthology/2021.adaptnlp-1.21/):
 ```
-@article{xu2021zero,
-  title={Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation},
-  author={Xu, Haoran and Koehn, Philipp},
-  journal={arXiv preprint arXiv:2103.02212},
-  year={2021}
+@inproceedings{xu-koehn-2021-zero,
+    title = "Zero-Shot Cross-Lingual Dependency Parsing through Contextual Embedding Transformation",
+    author = "Xu, Haoran  and
+      Koehn, Philipp",
+    booktitle = "Proceedings of the Second Workshop on Domain Adaptation for NLP",
+    month = apr,
+    year = "2021",
+    address = "Kyiv, Ukraine",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2021.adaptnlp-1.21",
+    pages = "204--213",
+    abstract = "Linear embedding transformation has been shown to be effective for zero-shot cross-lingual transfer tasks and achieve surprisingly promising results. However, cross-lingual embedding space mapping is usually studied in static word-level embeddings, where a space transformation is derived by aligning representations of translation pairs that are referred from dictionaries. We move further from this line and investigate a contextual embedding alignment approach which is sense-level and dictionary-free. To enhance the quality of the mapping, we also provide a deep view of properties of contextual embeddings, i.e., the anisotropy problem and its solution. Experiments on zero-shot dependency parsing through the concept-shared space built by our embedding transformation substantially outperform state-of-the-art methods using multilingual embeddings.",
 }
 ```
 
